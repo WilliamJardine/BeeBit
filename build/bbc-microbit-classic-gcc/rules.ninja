@@ -196,7 +196,7 @@ rule CXX_EXECUTABLE_LINKER__beebot
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/local/Cellar/cmake/3.5.2/bin/cmake -H/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc -B/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc
+  command = /usr/local/Cellar/cmake/3.5.2/bin/cmake -H/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc -B/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc
   description = Re-running CMake...
   generator = 1
 

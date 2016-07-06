@@ -5,5 +5,5 @@ if(YOTTA_META_TOOLCHAIN_FILE_INCLUDED)
 endif()
 set(YOTTA_META_TOOLCHAIN_FILE_INCLUDED 1)
 
-include("/Users/Elliot/Documents/Internship/BeeBot/yotta_targets/mbed-gcc/CMake/toolchain.cmake")
-include("/Users/Elliot/Documents/Internship/BeeBot/yotta_targets/bbc-microbit-classic-gcc/CMake/toolchain.cmake")
+include("/Users/Elliot/Documents/Internship/BeeBit/yotta_targets/mbed-gcc/CMake/toolchain.cmake")
+include("/Users/Elliot/Documents/Internship/BeeBit/yotta_targets/bbc-microbit-classic-gcc/CMake/toolchain.cmake")

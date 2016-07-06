@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Darwin")
 set(CMAKE_HOST_SYSTEM_VERSION "15.5.0")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/toolchain.cmake")
+include("/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/toolchain.cmake")
 
 set(CMAKE_SYSTEM "mbedOS-1")
 set(CMAKE_SYSTEM_NAME "mbedOS")

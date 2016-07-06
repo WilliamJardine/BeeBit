@@ -2,14 +2,14 @@
 
 cmake_minimum_required(VERSION 2.8.11)
 
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit/source")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit/source")
 
 
 set(YOTTA_AUTO_MICROBIT_CPP_FILES
-    "/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit/source/MicroBit.cpp"
+    "/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit/source/MicroBit.cpp"
 )
 # force dependency on the config header for cpp files, which CMake otherwise wouldn't track:
-set_property(SOURCE ${YOTTA_AUTO_MICROBIT_CPP_FILES} PROPERTY OBJECT_DEPENDS "/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/yotta_config.h")
+set_property(SOURCE ${YOTTA_AUTO_MICROBIT_CPP_FILES} PROPERTY OBJECT_DEPENDS "/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/yotta_config.h")
 
 
 add_library(microbit

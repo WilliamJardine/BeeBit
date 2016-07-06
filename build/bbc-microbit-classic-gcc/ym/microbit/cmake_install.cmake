@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/ym/microbit
+# Install script for directory: /Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/ym/microbit
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,8 +29,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/ym/microbit-dal/cmake_install.cmake")
-  include("/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/ym/microbit/source/cmake_install.cmake")
+  include("/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/ym/microbit-dal/cmake_install.cmake")
+  include("/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/ym/microbit/source/cmake_install.cmake")
 
 endif()
 

@@ -16,7 +16,7 @@ add_custom_target(all_tests)
 cmake_policy(SET CMP0017 OLD)
 
 # toolchain file for bbc-microbit-classic-gcc
-set(CMAKE_TOOLCHAIN_FILE "/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/toolchain.cmake")
+set(CMAKE_TOOLCHAIN_FILE "/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/toolchain.cmake")
 
 # provide function for post-processing executables
 function (yotta_postprocess_target target_type_ target_name_)
@@ -39,15 +39,18 @@ endfunction()
 
 # set target-defined definitions
 set(YOTTA_BUILD_YEAR "2016") # UTC year
-set(YOTTA_BUILD_MONTH "6") # UTC month 1-12
-set(YOTTA_BUILD_DAY "29") # UTC day 1-31
+set(YOTTA_BUILD_MONTH "7") # UTC month 1-12
+set(YOTTA_BUILD_DAY "6") # UTC day 1-31
 set(YOTTA_BUILD_HOUR "22") # UTC hour 0-24
-set(YOTTA_BUILD_MINUTE "30") # UTC minute 0-59
-set(YOTTA_BUILD_SECOND "39") # UTC second 0-61
-set(YOTTA_BUILD_UUID "4544cc85-f52f-4a58-b9c0-691ec149f14e") # unique random UUID for each build
+set(YOTTA_BUILD_MINUTE "55") # UTC minute 0-59
+set(YOTTA_BUILD_SECOND "0") # UTC second 0-61
+set(YOTTA_BUILD_UUID "6e909d7f-2104-46ea-bc77-8e471e7d5783") # unique random UUID for each build
+set(YOTTA_BUILD_VCS_ID "4ad30dc199e5d2e81c299fee5b51ffabb56e21e7") # git or mercurial hash
+set(YOTTA_BUILD_VCS_CLEAN "0") # evaluates true if the version control system was clean, otherwise false
+set(YOTTA_BUILD_VCS_DESCRIPTION "4ad30dc") # git describe or mercurial equivalent
 set(TARGET BBC_MICROBIT_CLASSIC_GCC)
 set(TARGET_LIKE_BBC_MICROBIT_CLASSIC_GCC TRUE)
-set(YOTTA_BUILD_INFO_HEADER "/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/yotta_build_info.h")
+set(YOTTA_BUILD_INFO_HEADER "/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/yotta_build_info.h")
 set(TARGET_LIKE_BBC_MICROBIT_CLASSIC_GCC TRUE)
 set(TARGET_LIKE_NRF51822 TRUE)
 set(TARGET_LIKE_NRF TRUE)
@@ -67,7 +70,7 @@ set(YOTTA_CFG_MINAR_ADDITIONAL_EVENT_POOLS_SIZE 100)
 set(YOTTA_CFG_ARCH TRUE)
 set(YOTTA_CFG_ARCH_ARM TRUE)
 set(YOTTA_CFG_MBED TRUE)
-set(YOTTA_CONFIG_MERGED_JSON_FILE "/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/yotta_config.json")
+set(YOTTA_CONFIG_MERGED_JSON_FILE "/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/yotta_config.json")
 
 
 project(beebot)
@@ -81,22 +84,22 @@ if(NOT DEFINED YOTTA_FORCE_INCLUDE_FLAG)
         set(YOTTA_FORCE_INCLUDE_FLAG "-include")
     endif()
 endif()
-add_definitions("${YOTTA_FORCE_INCLUDE_FLAG} \"/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/yotta_config.h\"")
+add_definitions("${YOTTA_FORCE_INCLUDE_FLAG} \"/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/yotta_config.h\"")
 
 # include root directories of all components we depend on (directly and
 # indirectly, including ourself)
-include_directories("/Users/Elliot/Documents/Internship/BeeBot")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit-dal")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/mbed-classic")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/ble")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/ble-nrf51822")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit-dal")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/mbed-classic")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/ble")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/ble-nrf51822")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk")
 
 
 # recurse into dependencies that aren't built elsewhere
 add_subdirectory(
-   "/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/ym/microbit"
+   "/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/ym/microbit"
    "${CMAKE_BINARY_DIR}/ym/microbit"
 )
 
@@ -105,44 +108,44 @@ add_subdirectory(
 # And others (typically CMSIS implementations) need to export non-system header
 # files. Please don't use this facility. Please. It's much, much better to fix
 # implementations that import these headers to import them using the full path.
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit/inc")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit-dal/inc/core")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit-dal/inc/types")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit-dal/inc/drivers")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit-dal/inc/bluetooth")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit-dal/inc/platform")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/mbed-classic/api")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/mbed-classic/hal")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/mbed-classic/targets/hal")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/mbed-classic/targets/cmsis")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/ble-nrf51822/source/btle")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/ble-nrf51822/source/btle/custom")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/ble-nrf51822/source/common")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_radio_notification")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_services/ble_dfu")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/common")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager/config")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/peer_manager")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/device")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/ble_flash")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/delay")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/hal")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage/config")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu/hci_transport")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/crc16")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/hci")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/scheduler")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/timer")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/util")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fds")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fstorage")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/experimental_section_vars")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/common/softdevice_handler")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/s130/headers")
-include_directories("/Users/Elliot/Documents/Internship/BeeBot/yotta_modules/nrf51-sdk/source/nordic_sdk/components/toolchain")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit/inc")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit-dal/inc/core")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit-dal/inc/types")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit-dal/inc/drivers")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit-dal/inc/bluetooth")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit-dal/inc/platform")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/mbed-classic/api")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/mbed-classic/hal")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/mbed-classic/targets/hal")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/mbed-classic/targets/cmsis")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/ble-nrf51822/source/btle")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/ble-nrf51822/source/btle/custom")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/ble-nrf51822/source/common")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_radio_notification")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_services/ble_dfu")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/common")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager/config")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/peer_manager")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/device")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/ble_flash")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/delay")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/hal")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage/config")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu/hci_transport")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/crc16")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/hci")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/scheduler")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/timer")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/util")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fds")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fstorage")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/experimental_section_vars")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/common/softdevice_handler")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/s130/headers")
+include_directories("/Users/Elliot/Documents/Internship/BeeBit/yotta_modules/nrf51-sdk/source/nordic_sdk/components/toolchain")
 
 
 # modules with custom CMake build systems may append to the
@@ -170,7 +173,7 @@ set(YOTTA_MODULE_NAME beebot)
 # add_subdirectory because the directories referred to here exist in the source
 # tree, not the working directory
 add_subdirectory(
-    "/Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/source"
+    "/Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/source"
     "${CMAKE_BINARY_DIR}/./source"
 )
 

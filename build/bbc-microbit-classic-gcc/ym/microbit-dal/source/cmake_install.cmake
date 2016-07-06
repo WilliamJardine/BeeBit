@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Elliot/Documents/Internship/BeeBot/yotta_modules/microbit-dal/source
+# Install script for directory: /Users/Elliot/Documents/Internship/BeeBit/yotta_modules/microbit-dal/source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

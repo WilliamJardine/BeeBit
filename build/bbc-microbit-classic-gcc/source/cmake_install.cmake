@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Elliot/Documents/Internship/BeeBot/build/bbc-microbit-classic-gcc/source
+# Install script for directory: /Users/Elliot/Documents/Internship/BeeBit/build/bbc-microbit-classic-gcc/source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Elliot/Documents/Internship/BeeBot/yotta_modules/mbed-classic
+# Install script for directory: /Users/Elliot/Documents/Internship/BeeBit/yotta_modules/mbed-classic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
