@@ -1,0 +1,25 @@
+//Pin 2
+#define FORWARD_INPUT_MIN 6
+#define FORWARD_INPUT_MAX 10
+#define BACKWARD_INPUT_MIN 40
+#define BACKWARD_INPUT_MAX 60
+#define LEFT_INPUT_MIN 100
+#define LEFT_INPUT_MAX 200
+#define RIGHT_INPUT_MIN 300
+#define RIGHT_INPUT_MAX 400
+#define CLEAR_INPUT_MIN 450
+#define CLEAR_INPUT_MAX 580
+#define PAUSE_INPUT_MIN 620
+#define PAUSE_INPUT_MAX 870
+#define GO_INPUT_MIN 950
+#define GO_INPUT_MAX 1024
+//Actions 
+#define GO 1
+#define PAUSE 2
+#define CLEAR 3
+#define FORWARD 4
+#define BACKWARD 5
+#define RIGHT 6
+#define LEFT 7
+//Sleep 
+#define SLEEP_TIME 1000

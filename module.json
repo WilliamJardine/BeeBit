@@ -1,0 +1,12 @@
+{
+  "name": "beebot",
+  "version": "1.0.0",
+  "bin": "./source",
+  "private": true,
+  "description": "Clone of the BeeBot using 2x MicroBit",
+  "author": "Elliot Wright",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "microbit": "^2.0.0-rc4"
+  }
+}
